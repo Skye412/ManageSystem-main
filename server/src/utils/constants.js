@@ -1,0 +1,7 @@
+module.exports = {
+  TOKEN_EXPIRY: '15m',
+  REFRESH_TOKEN_EXPIRY: '7d',
+  DEFAULT_PASSWORD: '123456',
+  BCRYPT_ROUNDS: 10,
+  MAX_FILE_SIZE: 10 * 1024 * 1024,
+};

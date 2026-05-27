@@ -1,0 +1,59 @@
+@host = 127.0.0.1:3000
+
+### 登录用户
+POST http://{{host}}/user/adminLogin HTTP/1.1 
+Content-Type: application/json
+
+{
+   "username": "admin",
+    "password": "admin"
+}
+
+### 查找专业班级信息
+GET http://{{host}}/manage/getMajorsAndClasses HTTP/1.1 
+
+### 根据班级名查找所有学生
+POST http://{{host}}/manage/getStudentsByClassName HTTP/1.1 
+Content-Type: application/json
+
+{
+   "className": "A2151"
+}
+
+### 添加专业班级
+POST http://{{host}}/manage/addMajorClass HTTP/1.1 
+Content-Type: application/json
+
+{
+   "major_name": "金融学",
+    "class_name": "A2133",
+    "class_advisor": "李拔豪"
+}
+### 添加专业班级
+POST http://{{host}}/manage/addStudentToClass HTTP/1.1 
+Content-Type: application/json
+
+{
+   "student_id": "20210203856",
+    "name": "邱鹏",
+    "gender": "男",
+    "major":"金融工程",
+    "className": "A2151"
+}
+
+### 找记录
+POST http://{{host}}/message/getmessageslist HTTP/1.1 
+Content-Type: application/json
+
+{
+   "enterprise_id": "3"
+}
+### 找个人记录
+POST http://{{host}}/message/getChatMessages HTTP/1.1 
+Content-Type: application/json
+
+{
+   "enterprise_id": "9",
+   "student_id":"5"
+
+}
